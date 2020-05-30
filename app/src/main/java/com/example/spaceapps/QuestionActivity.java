@@ -1,11 +1,10 @@
 package com.example.spaceapps;
-
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.service.autofill.OnClickAction;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.widget.Button;
@@ -16,13 +15,13 @@ import android.widget.TextView;
 
 public class QuestionActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
     private Button buttonX, buttonNext;
-    private RadioButton radioButtonA,radioButtonB,radioButtonC,radioButtonD;
+    private RadioButton radioButtonA, radioButtonB, radioButtonC, radioButtonD;
     private TextView textoQuestao;
-    private int i = 1,maxQuestions = 5;
+    private int i = 1, maxQuestions = 5;
     private ProgressBar barraProgresso;
     private RadioGroup radioGroup;
     private TextToSpeech tts;
-
+    private RadioButton aux;
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +31,7 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
         textoQuestao.setText("questao " + String.valueOf(i) + ":");
         buttonX = findViewById(R.id.X);
         buttonNext = findViewById(R.id.buttonNext);
+        buttonNext.setText("Enter");
         radioButtonA = findViewById(R.id.radioButtonA);
         radioButtonB = findViewById(R.id.radioButtonB);
         radioButtonC = findViewById(R.id.radioButtonC);
@@ -40,48 +40,55 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
         barraProgresso.setMax(6);
         barraProgresso.setMin(1);
         radioGroup = findViewById(R.id.radioGroup);
-
-       //Speak sound
+        //Speak sound
         tts = new TextToSpeech(this, this);
     }
 
-    public void update()
-    {
-        textoQuestao.setText("questao " + String.valueOf(i) + ":");
-        barraProgresso.setProgress(i);
-        radioGroup.clearCheck();
-        //Speak
-        tts.speak("Próxima questão!", tts.QUEUE_FLUSH, null);
+    public void update() {
+        aux = findViewById(radioGroup.getCheckedRadioButtonId());
+        if (aux.getId() == radioButtonC.getId()) {
+            aux.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+        } else {
+            aux.setBackgroundColor(getResources().getColor(R.color.colorRedLight));
+            radioButtonC.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+        }
+        buttonNext.setText("Next");
     }
 
-    public void pressedNext(View view){
-
-        if(i == maxQuestions)
-        {
+    public void pressedNext(View view) {
+        if (buttonNext.getText() == "Enter") {
+            if (radioButtonA.isChecked() || radioButtonB.isChecked() || radioButtonC.isChecked() || radioButtonD.isChecked()) {
+                update();
+            }
+        } else if (buttonNext.getText() == "Next") {
             i++;
-            barraProgresso.setProgress(i);
+            if (i > maxQuestions) {
+                barraProgresso.setProgress(i);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }else {
+                aux.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                radioButtonC.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                textoQuestao.setText("questao " + String.valueOf(i) + ":");
+                barraProgresso.setProgress(i);
+                radioGroup.clearCheck();
+                buttonNext.setText("Enter");
+                tts.speak("Próxima questão!", tts.QUEUE_FLUSH, null);
+            }
+          }
+        }
+
+        public void pressedExit (View view)
+        {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
             finish();
-        }else if (radioButtonA.isChecked() || radioButtonB.isChecked() || radioButtonC.isChecked() || radioButtonD.isChecked()) {
-            i++;
-            update();
         }
-
-    }
-
-    public void pressedExit(View view)
-    {
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intent);
-        finish();
-    }
-
-    @Override
-    public void onInit(int status) {
-        if(status == TextToSpeech.SUCCESS)
-        {
-
+        @Override
+        public void onInit ( int status){
+            if (status == TextToSpeech.SUCCESS) {
+            }
         }
     }
-}
+
