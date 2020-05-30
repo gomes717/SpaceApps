@@ -45,6 +45,7 @@ public class QuestionActivity extends AppCompatActivity {
         if(i == maxQuestions)
         {
             i++;
+
             barraProgresso.setProgress(i);
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
@@ -54,8 +55,6 @@ public class QuestionActivity extends AppCompatActivity {
             update();
         }
     }
-
-
 
     public void pressedExit(View view)
     {
