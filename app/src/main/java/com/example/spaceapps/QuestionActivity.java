@@ -50,6 +50,8 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
         textoQuestao.setText("questao " + String.valueOf(i) + ":");
         barraProgresso.setProgress(i);
         radioGroup.clearCheck();
+        //Speak
+        tts.speak("Próxima questão!", tts.QUEUE_FLUSH, null);
     }
 
     public void pressedNext(View view){
@@ -65,8 +67,7 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
             i++;
             update();
         }
-        //Speak
-        tts.speak("Próxima questão!", tts.QUEUE_FLUSH, null);
+
     }
 
     public void pressedExit(View view)
