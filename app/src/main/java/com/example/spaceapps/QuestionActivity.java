@@ -2,6 +2,7 @@ package com.example.spaceapps;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.service.autofill.OnClickAction;
@@ -22,6 +23,14 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
     private RadioGroup radioGroup;
     private TextToSpeech tts;
     private RadioButton aux;
+
+    private TextView question;
+
+    private MediaPlayer anwserCorrect;
+    private MediaPlayer anwserWrong;
+    private MediaPlayer finalEXercises;
+
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +38,10 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
         setContentView(R.layout.activity_question);
         textoQuestao = findViewById(R.id.questaoText);
         textoQuestao.setText("questao " + String.valueOf(i) + ":");
+
+        question = findViewById(R.id.questionPlace);
+        question.setText("1+1=");
+
         buttonX = findViewById(R.id.X);
         buttonNext = findViewById(R.id.buttonNext);
         buttonNext.setText("Enter");
@@ -42,17 +55,30 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
         radioGroup = findViewById(R.id.radioGroup);
         //Speak sound
         tts = new TextToSpeech(this, this);
+        anwserCorrect = MediaPlayer.create(this, R.raw.correct);
+        anwserWrong = MediaPlayer.create(this, R.raw.wrong);
+        finalEXercises = MediaPlayer.create(this, R.raw.finalwin);
+
     }
 
     public void update() {
         aux = findViewById(radioGroup.getCheckedRadioButtonId());
         if (aux.getId() == radioButtonC.getId()) {
             aux.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+            anwserCorrect.start(); // no need to call prepare(); create() does that for you
         } else {
             aux.setBackgroundColor(getResources().getColor(R.color.colorRedLight));
             radioButtonC.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+            anwserWrong.start(); // no need to call prepare(); create() does that for you
         }
         buttonNext.setText("Next");
+    }
+
+
+    public void clickOption(View view) {
+        aux = findViewById(radioGroup.getCheckedRadioButtonId());
+        String optionSelect = aux.getText().toString();
+        tts.speak(optionSelect, tts.QUEUE_FLUSH, null);
     }
 
     public void pressedNext(View view) {
@@ -66,6 +92,7 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
                 barraProgresso.setProgress(i);
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
+                finalEXercises.start(); // no need to call prepare(); create() does that for you
                 finish();
             }else {
                 aux.setBackgroundColor(getResources().getColor(R.color.colorWhite));
@@ -74,7 +101,8 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
                 barraProgresso.setProgress(i);
                 radioGroup.clearCheck();
                 buttonNext.setText("Enter");
-                tts.speak("Próxima questão!", tts.QUEUE_FLUSH, null);
+                String questionT = question.getText().toString();
+                tts.speak(questionT, tts.QUEUE_FLUSH, null);
             }
           }
         }
@@ -88,6 +116,8 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
         @Override
         public void onInit ( int status){
             if (status == TextToSpeech.SUCCESS) {
+                String questionT = question.getText().toString();
+                tts.speak(questionT, tts.QUEUE_FLUSH, null);
             }
         }
     }
