@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class QuestionActivity extends AppCompatActivity {
@@ -16,6 +17,7 @@ public class QuestionActivity extends AppCompatActivity {
     private TextView textoQuestao;
     private int i = 1,maxQuestions = 5;
     private ProgressBar barraProgresso;
+    private RadioGroup radioGroup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,13 +33,14 @@ public class QuestionActivity extends AppCompatActivity {
         barraProgresso = findViewById(R.id.progressBar);
         barraProgresso.setMax(6);
         barraProgresso.setMin(1);
+        radioGroup = findViewById(R.id.radioGroup);
     }
 
     public void update()
     {
         textoQuestao.setText("questao " + String.valueOf(i) + ":");
         barraProgresso.setProgress(i);
-
+        radioGroup.clearCheck();
     }
 
     public void pressedNext(View view){
@@ -45,7 +48,6 @@ public class QuestionActivity extends AppCompatActivity {
         if(i == maxQuestions)
         {
             i++;
-
             barraProgresso.setProgress(i);
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
