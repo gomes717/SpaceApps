@@ -143,8 +143,6 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
             i++;
             if (i > maxQuestions) {
                 barraProgresso.setProgress(i);
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
                 finalEXercises.start(); // no need to call prepare(); create() does that for you
                 finish();
             }else {
@@ -186,8 +184,6 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
           }
         }
     public void pressedExit (View view) {
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(intent);
             finish();
         }
     @Override

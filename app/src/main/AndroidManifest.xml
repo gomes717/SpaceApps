@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/appimage"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.ConfigActivity"></activity>
         <activity
             android:name=".activity.QuestionActivity"
             android:screenOrientation="portrait" />

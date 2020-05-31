@@ -9,13 +9,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.spaceapps.R;
-import com.example.spaceapps.RankingFragment;
+import com.example.spaceapps.fragment.RankingFragment;
 import com.example.spaceapps.fragment.ChatFragment;
 import com.example.spaceapps.fragment.MenuFragment;
 import com.example.spaceapps.fragment.QuestionsFragment;
 
 public class MainActivity extends AppCompatActivity {
-    private Button buttonQuestion,buttonMenu,buttonChat,buttonQuestionPage,buttonLeaderBoard,buttonMateria,buttonConfig;
+    private Button  buttonQuestion,
+                    buttonMenu,
+                    buttonChat,
+                    buttonQuestionPage,
+                    buttonLeaderBoard,
+                    buttonConfig;
 
     private QuestionsFragment questionsFragment;
     private MenuFragment menuFragment;
@@ -31,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         buttonChat = findViewById(R.id.buttonChat);
         buttonConfig = findViewById(R.id.buttonConfig);
         buttonLeaderBoard = findViewById(R.id.buttonLeaderBoard);
-        buttonMateria = findViewById(R.id.buttonMateria);
         buttonQuestionPage = findViewById(R.id.buttonQuestionPage);
 
         buttonQuestion.setOnClickListener(new View.OnClickListener() {
@@ -39,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), QuestionActivity.class);
                 startActivity(intent);
-                finish();
+                update();
             }
         });
 
@@ -79,6 +83,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        buttonConfig.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ConfigActivity.class);
+                startActivity(intent);
+                update();
+            }
+        });
+
         /////////////////////////////////////////////////////////////////////////////////////////
         //implementacao fragmentos
         chatFragment = new ChatFragment();
@@ -91,4 +104,8 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
 
     }
+
+
+    private void update()
+    {}
 }
