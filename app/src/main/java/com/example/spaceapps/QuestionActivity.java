@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
-import android.service.autofill.OnClickAction;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +17,7 @@ import java.util.Random;
 import java.util.Vector;
 
 public class QuestionActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
+    
     private Button buttonX, buttonNext;
     private RadioButton radioButtonA, radioButtonB, radioButtonC, radioButtonD;
     private TextView textoQuestao;
@@ -34,16 +34,15 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
     private MediaPlayer finalEXercises;
 
 
-    ///Season questions
-    private String [] totalQuestion = {"1+1=", "2+2=", "7X10=", "80+2=", "46/23=", "1000+0=", "17-8="};
-    private String [] totalAnswer = {"2", "4", "70", "82", "2", "1000", "9"};
-    private String [] wrongAnswer = {"99", "8", "72%", "1888", "87662", "556"};
+    ///Season questions math
+    private String [] totalQuestionMath = {"1+1=", "2+2=", "7X10=", "80+2=", "46/23=", "1000+0=", "17-8="};
+    private String [] totalAnswerMath = {"2", "4", "70", "82", "2", "1000", "9"};
+    private String [] wrongAnswerMath = {"99", "8", "72%", "1888", "87662", "556"};
     private RadioButton correctAnswer;
-    private  RadioButton [] options = {radioButtonA, radioButtonB, radioButtonC, radioButtonD};
+    private RadioButton [] options = { radioButtonA, radioButtonB, radioButtonC, radioButtonD };
     private Vector<Integer> questionsToUse = new Vector<Integer>();
 
-
-
+    
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,31 +82,31 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
         Random generator = new Random();
         int n;
         for (int j = 0; j <= maxQuestions; j++) {
-            n = generator.nextInt(totalQuestion.length);
+            n = generator.nextInt(totalQuestionMath.length);
             while (questionsToUse.contains(n))
             {
-                n = generator.nextInt(totalQuestion.length);
+                n = generator.nextInt(totalQuestionMath.length);
             }
             questionsToUse.add(n);
         }
-        question.setText(totalQuestion[questionsToUse.get(0)]);
+        question.setText(totalQuestionMath[questionsToUse.get(0)]);
 
         Vector<String> answers = new Vector<String>();
         int posCorrect = generator.nextInt(4);
-        options[posCorrect].setText(totalAnswer[questionsToUse.get(0)]);
-        answers.add(totalAnswer[questionsToUse.get(0)]);
+        options[posCorrect].setText(totalAnswerMath[questionsToUse.get(0)]);
+        answers.add(totalAnswerMath[questionsToUse.get(0)]);
         correctAnswer = options[posCorrect];
 
         for (int j = 0; j < 4; j++) {
             if (j != posCorrect)
             {
-                n = generator.nextInt(wrongAnswer.length);
+                n = generator.nextInt(wrongAnswerMath.length);
 
-                while (answers.contains(wrongAnswer[n])) {
-                    n = generator.nextInt(wrongAnswer.length);
+                while (answers.contains(wrongAnswerMath[n])) {
+                    n = generator.nextInt(wrongAnswerMath.length);
                 }
-                answers.add(wrongAnswer[n]);
-                options[j].setText(wrongAnswer[n]);
+                answers.add(wrongAnswerMath[n]);
+                options[j].setText(wrongAnswerMath[n]);
             }
         }
     }
@@ -146,34 +145,35 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
                 finalEXercises.start(); // no need to call prepare(); create() does that for you
                 finish();
             }else {
-                aux.setBackgroundColor(getResources().getColor(R.color.colorWhite));
-                correctAnswer.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                for (int i = 0; i < options.length; i++)
+                {
+                    options[i].setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                }
                 textoQuestao.setText("questao " + String.valueOf(i) + ":");
 
-
-//////////////////////////
-                question.setText(totalQuestion[questionsToUse.get(i-1)]);
+                //////////////////////////
+                question.setText(totalQuestionMath[questionsToUse.get(i-1)]);
                 Random generator = new Random();
                 int n;
                 Vector<String> answers = new Vector<String>();
                 int posCorrect = generator.nextInt(4);
-                options[posCorrect].setText(totalAnswer[questionsToUse.get(i-1)]);
-                answers.add(totalAnswer[questionsToUse.get(i-1)]);
+                options[posCorrect].setText(totalAnswerMath[questionsToUse.get(i-1)]);
+                answers.add(totalAnswerMath[questionsToUse.get(i-1)]);
                 correctAnswer = options[posCorrect];
 
                 for (int j = 0; j < 4; j++) {
                     if (j != posCorrect)
                     {
-                        n = generator.nextInt(wrongAnswer.length);
+                        n = generator.nextInt(wrongAnswerMath.length);
 
-                        while (answers.contains(wrongAnswer[n])) {
-                            n = generator.nextInt(wrongAnswer.length);
+                        while (answers.contains(wrongAnswerMath[n])) {
+                            n = generator.nextInt(wrongAnswerMath.length);
                         }
-                        answers.add(wrongAnswer[n]);
-                        options[j].setText(wrongAnswer[n]);
+                        answers.add(wrongAnswerMath[n]);
+                        options[j].setText(wrongAnswerMath[n]);
                     }
                 }
-   /////////////////////////////////                 /////////////////////////////////////
+                /////////////////////////////////                 /////////////////////////////////////
                 barraProgresso.setProgress(i);
                 radioGroup.clearCheck();
                 buttonNext.setText("Enter");
@@ -182,15 +182,13 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
             }
           }
         }
-
-        public void pressedExit (View view)
-        {
+    public void pressedExit (View view) {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
             finish();
         }
-        @Override
-        public void onInit ( int status){
+    @Override
+    public void onInit ( int status){
             if (status == TextToSpeech.SUCCESS) {
                 String questionT = question.getText().toString();
                 tts.speak(questionT, tts.QUEUE_FLUSH, null);
