@@ -23,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
                     buttonConfig,
                     buttonSearch;
 
-    private Button  buttonQuestion;
-
     private QuestionsFragment questionsFragment;
     private MenuFragment menuFragment;
     private RankingFragment rankingFragment;
@@ -39,23 +37,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         //implementacao botoes
-        buttonQuestion = findViewById(R.id.buttonQuestion);
         buttonMenu = findViewById(R.id.buttonMenu);
         buttonChat = findViewById(R.id.buttonChat);
         buttonConfig = findViewById(R.id.buttonConfig);
         buttonLeaderBoard = findViewById(R.id.buttonLeaderBoard);
         buttonQuestionPage = findViewById(R.id.buttonQuestionPage);
         buttonSearch = findViewById(R.id.buttonSearch);
-
-        buttonQuestion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), QuestionActivity.class);
-                startActivity(intent);
-                update();
-            }
-        });
-
         buttonMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
