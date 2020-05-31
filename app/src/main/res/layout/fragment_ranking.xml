@@ -40,10 +40,10 @@
                         android:layout_width="411dp"
                         android:layout_height="46dp"
                         android:layout_marginTop="24dp"
-                        android:text="     1º - Immanuel Kant                                                7895456p"
+                        android:text="       1º - Immanuel Kant                                          7895456p"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/guideline7"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
@@ -55,6 +55,13 @@
                         app:layout_constraintEnd_toEndOf="@+id/textView8"
                         app:layout_constraintStart_toStartOf="@+id/textView8"
                         app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="29dp" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -65,10 +72,11 @@
                         android:id="@+id/textView9"
                         android:layout_width="match_parent"
                         android:layout_height="52dp"
-                        android:text="     2º - Plato                                                                   6504898p"
+                        android:text="     2º - Plato                                                            6504898p"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/guideline10"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
@@ -80,6 +88,13 @@
                         app:layout_constraintEnd_toEndOf="@+id/textView9"
                         app:layout_constraintStart_toStartOf="@+id/textView9"
                         app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="30dp" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -90,10 +105,10 @@
                         android:id="@+id/textView10"
                         android:layout_width="match_parent"
                         android:layout_height="44dp"
-                        android:text="     3º -Diogenes                                                            6390748p"
+                        android:text="     3º -Diogenes                                                      6390748p"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/guideline11"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
@@ -105,21 +120,30 @@
                         app:layout_constraintEnd_toEndOf="@+id/textView10"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="30dp" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
                     android:id="@+id/textView11"
                     android:layout_width="match_parent"
                     android:layout_height="53dp"
-                    android:text="     4º - Ludwig Wittgenstein                                       5456728p" />
+                    android:text="     4º - Ludwig Wittgenstein                                 5456728p" />
 
                 <TextView
                     android:id="@+id/textView13"
                     android:layout_width="match_parent"
                     android:layout_height="53dp"
-                    android:text="     4º - Rene Descartes                                               5146791p" />
+                    android:text="     5º - Rene Descartes                                         5146791p" />
 
             </LinearLayout>
         </ScrollView>
+
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
