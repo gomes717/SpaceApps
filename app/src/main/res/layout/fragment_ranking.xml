@@ -21,28 +21,104 @@
                 android:orientation="vertical" >
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/textView12"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="1º -john                                                7895456p" />
+                    android:layout_height="74dp"
+                    android:background="#006200EE"
+                    android:gravity="center"
+                    android:text="LEADERBOARD"
+                    android:textColor="#7e1073"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/textView9"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="2º - stephie                                         6504898p" />
+                    android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/textView10"
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="411dp"
+                        android:layout_height="46dp"
+                        android:layout_marginTop="24dp"
+                        android:text="     1º - Immanuel Kant                                                7895456p"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="253dp"
+                        android:layout_height="64dp"
+                        android:src="@mipmap/golden_icon_w"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/textView8"
+                        app:layout_constraintStart_toStartOf="@+id/textView8"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="3º -diogenes                                       6390748p" />
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:text="     2º - Plato                                                                   6504898p"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="99dp"
+                        android:layout_height="60dp"
+                        android:src="@mipmap/silver_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/textView9"
+                        app:layout_constraintStart_toStartOf="@+id/textView9"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:text="     3º -Diogenes                                                            6390748p"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="60dp"
+                        android:layout_height="65dp"
+                        android:src="@mipmap/bronze_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/textView10"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
                     android:id="@+id/textView11"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="4º -david                                             5456728p" />
+                    android:layout_height="53dp"
+                    android:text="     4º - Ludwig Wittgenstein                                       5456728p" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="match_parent"
+                    android:layout_height="53dp"
+                    android:text="     4º - Rene Descartes                                               5146791p" />
+
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
