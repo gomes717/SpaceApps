@@ -1,4 +1,4 @@
-package com.example.spaceapps;
+package com.example.spaceapps.activity;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -12,6 +12,9 @@ import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import com.example.spaceapps.R;
+import com.example.spaceapps.activity.MainActivity;
 
 import java.util.Random;
 import java.util.Vector;

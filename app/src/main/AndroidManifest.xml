@@ -11,10 +11,10 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MenuActivity"></activity>
         <activity
-            android:name=".QuestionActivity"
+            android:name=".activity.QuestionActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
