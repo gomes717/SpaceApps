@@ -11,12 +11,14 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
+        android:background="#0003DAC5"
+        android:scaleType="fitCenter"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/appimage"
-        tools:srcCompat="@mipmap/appimage" />
+        app:srcCompat="@mipmap/appicon"
+        tools:srcCompat="@mipmap/appicon" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

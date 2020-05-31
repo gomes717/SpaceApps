@@ -76,8 +76,8 @@
 
     <FrameLayout
         android:id="@+id/frameConteudo"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="425dp"
+        android:layout_height="704dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -96,13 +96,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.93" />
+        app:layout_constraintGuide_end="57dp" />
 
     <ImageButton
         android:id="@+id/buttonSearch"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#00FFFFFF"
+        android:background="@color/colorPrimary"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
@@ -114,7 +114,7 @@
         android:id="@+id/buttonChat"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#00FFFFFF"
+        android:background="@color/colorPrimary"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
@@ -126,7 +126,7 @@
         android:id="@+id/buttonQuestionPage"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#00FFFFFF"
+        android:background="@color/colorPrimary"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
@@ -138,7 +138,7 @@
         android:id="@+id/buttonLeaderBoard"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#00FFFFFF"
+        android:background="@color/colorPrimary"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
@@ -150,7 +150,7 @@
         android:id="@+id/buttonMenu"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#00FFFFFF"
+        android:background="@color/colorPrimary"
         android:focusable="auto"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
