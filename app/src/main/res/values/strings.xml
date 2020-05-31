@@ -108,4 +108,7 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="title_activity_config">ScrollingActivity</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_loading1">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

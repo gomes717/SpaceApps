@@ -61,6 +61,11 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
         buttonNext = findViewById(R.id.buttonNext);
         buttonNext.setText("Enter");
 
+        radioButtonA = findViewById(R.id.radioButtonA);
+        radioButtonB = findViewById(R.id.radioButtonB);
+        radioButtonC = findViewById(R.id.radioButtonC);
+        radioButtonD = findViewById(R.id.radioButtonD);
+
 
         options[0] =  findViewById(R.id.radioButtonA);
         options[1] =  findViewById(R.id.radioButtonB);
@@ -71,6 +76,7 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
         barraProgresso.setMax(6);
         barraProgresso.setMin(1);
         radioGroup = findViewById(R.id.radioGroup);
+
         //Speak sound
         tts = new TextToSpeech(this, this);
         anwserCorrect = MediaPlayer.create(this, R.raw.correct);
@@ -133,7 +139,7 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
 
     public void pressedNext(View view) {
         if (buttonNext.getText() == "Enter") {
-            if (radioButtonA.isChecked() || radioButtonB.isChecked() || radioButtonC.isChecked() || radioButtonD.isChecked()) {
+            if (options[0].isChecked() || options[1].isChecked() || options[2].isChecked() || options[3].isChecked()) {
                 update();
             }
         } else if (buttonNext.getText() == "Next") {
@@ -141,9 +147,9 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
             if (i > maxQuestions) {
                 barraProgresso.setProgress(i);
                 finalEXercises.start(); // no need to call prepare(); create() does that for you
-
                 finish();
-            }else {
+            }else
+                {
                 for (int i = 0; i < options.length; i++)
                 {
                     options[i].setBackgroundColor(getResources().getColor(R.color.colorWhite));
@@ -181,6 +187,7 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
             }
           }
         }
+
     public void pressedExit (View view) {
         finish();
         }
