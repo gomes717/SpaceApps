@@ -235,47 +235,54 @@
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
 
-                        <Button
-                            android:id="@+id/button13"
+                        <ImageButton
+                            android:id="@+id/imageButton15"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Button" />
+                            android:background="@android:color/transparent"
+                            android:src="@mipmap/biomas1" />
 
-                        <Button
-                            android:id="@+id/button14"
+                        <ImageButton
+                            android:id="@+id/imageButton16"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Button" />
+                            android:background="@android:color/transparent"
+                            android:src="@mipmap/biomas2" />
 
-                        <Button
-                            android:id="@+id/button16"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="Button" />
-
-                        <Button
-                            android:id="@+id/button17"
+                        <ImageButton
+                            android:id="@+id/imageButton17"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Button" />
+                            android:background="@android:color/transparent"
+                            android:src="@mipmap/biomas3" />
 
-                        <Button
-                            android:id="@+id/button18"
+                        <ImageButton
+                            android:id="@+id/imageButton18"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Button" />
+                            android:background="@android:color/transparent"
+                            android:src="@mipmap/ambiente1" />
 
-                        <Button
-                            android:id="@+id/button6"
+                        <ImageButton
+                            android:id="@+id/imageButton19"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Button" />
+                            android:background="@android:color/transparent"
+                            android:src="@mipmap/ambiente2" />
+
+                        <ImageButton
+                            android:id="@+id/imageButton20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:src="@mipmap/ambiente3" />
+
                     </LinearLayout>
                 </HorizontalScrollView>
             </TableRow>
