@@ -22,7 +22,6 @@ public class QuestionsFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
                 View view  = inflater.inflate(R.layout.fragment_questions, container, false);
-
                 return view;
     }
 }
