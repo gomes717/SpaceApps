@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.example.spaceapps.R;
 import com.example.spaceapps.activity.MainActivity;
 
+import java.util.Locale;
 import java.util.Random;
 import java.util.Vector;
 
@@ -25,7 +26,7 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
     private Button buttonX, buttonNext;
     private RadioButton radioButtonA, radioButtonB, radioButtonC, radioButtonD;
     private TextView textoQuestao;
-    private int i = 1, maxQuestions = 5;
+    private int i = 1, maxQuestions = 8;
     private ProgressBar barraProgresso;
     private RadioGroup radioGroup;
     private TextToSpeech tts;
@@ -38,9 +39,16 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
     private MediaPlayer finalEXercises;
 
     ///Season questions math
-    private String [] totalQuestionMath = {"1+1=", "2+2=", "7×10=", "80+2=", "46÷23=", "1000+0=", "17−8="};
-    private String [] totalAnswerMath = {"2", "4", "70", "82", "2", "1000", "9"};
-    private String [] wrongAnswerMath = {"99", "8", "72%", "1888", "87662", "556"};
+    private String [] totalQuestionMath = {"98+14=", "4+2+5+5=", "7+10+2+3+4+1=", "80+2+5+6+3=", "46+23=", "1000+10+33+10+2=", "17+8+16+12+12+1=",
+                                            "85+65+2=", "89+2+1", "8+6+4+5+80", "1+1+2+3+5+8+13=", "25+65+3+3+8", "17+5+9=", "98+74+2+3+6=", "26+5+9="};
+    private String [] totalAnswerMath = {"112", "16", "33", "96", "69", "1055", "66",
+                                        "152", "92", "103", "33", "104", "31", "183", "40"};
+
+    private String [] wrongAnswerMath = {"111", "15", "32", "95", "68", "1054", "67",
+                                         "151", "91", "30", "34", "103", "29", "184", "44",
+
+                                        "113", "16", "97", "70", "1057", "67",
+                                        "153", "93", "105", "185", "41"};
     private RadioButton correctAnswer;
     private RadioButton [] options = { radioButtonA, radioButtonB, radioButtonC, radioButtonD };
     private Vector<Integer> questionsToUse = new Vector<Integer>();
@@ -79,7 +87,7 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
 
         //Speak sound
         tts = new TextToSpeech(this, this);
-        tts.setPitch((float) 0.5);
+
         tts.setSpeechRate((float) 1.4);
 
         anwserCorrect = MediaPlayer.create(this, R.raw.correct);
@@ -149,6 +157,7 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
             if (i > maxQuestions) {
                 barraProgresso.setProgress(i);
                 finalEXercises.start(); // no need to call prepare(); create() does that for you
+                //////////////////////////////////////////////////////AQUI COLOCAR A NOVA INTENT
                 finish();
             }else
                 {
@@ -197,7 +206,7 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
     public void onInit ( int status){
             if (status == TextToSpeech.SUCCESS) {
 
-
+                    tts.setLanguage(Locale.US);
                     String questionT = question.getText().toString();
                     tts.speak(questionT, tts.QUEUE_FLUSH, null);
 
