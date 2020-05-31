@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
                     buttonQuestionPage,
                     buttonLeaderBoard,
                     buttonConfig;
+
     private Button  buttonQuestion;
 
     private QuestionsFragment questionsFragment;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //implementacao botoes
         buttonQuestion = findViewById(R.id.buttonQuestion);
-        buttonMenu = findViewById(R.id.buttonMenu);
+        buttonMenu = (ImageButton) findViewById(R.id.buttonMenu);
         buttonChat = findViewById(R.id.buttonSearch);
         buttonConfig = findViewById(R.id.buttonConfig);
         buttonLeaderBoard = findViewById(R.id.buttonLeaderBoard);

@@ -78,6 +78,7 @@
         android:id="@+id/frameConteudo"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +96,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="48dp" />
+        app:layout_constraintGuide_percent="0.93" />
 
     <ImageButton
         android:id="@+id/buttonSearch"
@@ -150,6 +151,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="#00FFFFFF"
+        android:focusable="auto"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
