@@ -37,7 +37,6 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
     private MediaPlayer anwserWrong;
     private MediaPlayer finalEXercises;
 
-
     ///Season questions math
     private String [] totalQuestionMath = {"1+1=", "2+2=", "7×10=", "80+2=", "46÷23=", "1000+0=", "17−8="};
     private String [] totalAnswerMath = {"2", "4", "70", "82", "2", "1000", "9"};

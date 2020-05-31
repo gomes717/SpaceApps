@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".fragment.QuestionsFragment">
 
     <LinearLayout
@@ -23,19 +24,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/textMat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Matematica" />
-
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/matematica" />
             </TableRow>
 
         </TableLayout>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -58,126 +58,54 @@
                             android:layout_weight="1"
                             android:text="Question 1" />
 
-                        <Button
-                            android:id="@+id/button8"
+                        <ImageButton
+                            android:id="@+id/imageButton3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Button" />
+                            android:background="@android:color/transparent"
+                            android:src="@mipmap/adicao1" />
 
-                        <Button
-                            android:id="@+id/button10"
+                        <ImageButton
+                            android:id="@+id/imageButton4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Button" />
+                            android:background="@android:color/transparent"
+                            android:src="@mipmap/adicao2" />
 
-                        <Button
-                            android:id="@+id/button4"
+                        <ImageButton
+                            android:id="@+id/imageButton5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Button" />
+                            android:background="@android:color/transparent"
+                            android:src="@mipmap/adicao3" />
 
-                        <Button
-                            android:id="@+id/button9"
+                        <ImageButton
+                            android:id="@+id/imageButton6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Button" />
+                            android:background="@android:color/transparent"
+                            android:src="@mipmap/funcao1" />
 
-                        <Button
-                            android:id="@+id/button7"
+                        <ImageButton
+                            android:id="@+id/imageButton7"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Button" />
+                            android:background="@android:color/transparent"
+                            android:src="@mipmap/funcao2" />
 
-                    </LinearLayout>
-                </HorizontalScrollView>
-
-            </TableRow>
-        </androidx.cardview.widget.CardView>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="100dp" />
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-                <TextView
-                    android:id="@+id/textFis"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Fisica" />
-            </TableRow>
-
-        </TableLayout>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:id="@+id/button19"
+                        <ImageButton
+                            android:id="@+id/imageButton8"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Button" />
+                            android:background="@android:color/transparent"
+                            android:src="@mipmap/funcao3" />
 
-                        <Button
-                            android:id="@+id/button20"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Button" />
-
-                        <Button
-                            android:id="@+id/button21"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Button" />
-
-                        <Button
-                            android:id="@+id/button23"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Button" />
-
-                        <Button
-                            android:id="@+id/button22"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Button" />
-
-                        <Button
-                            android:id="@+id/button5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Button" />
                     </LinearLayout>
                 </HorizontalScrollView>
 
@@ -196,11 +124,103 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/textGeo"
+                <ImageView
+                    android:id="@+id/imageView3"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Geografia" />
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/fisica" />
+            </TableRow>
+
+        </TableLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/imageButton9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:src="@mipmap/mecanica1" />
+
+                        <ImageButton
+                            android:id="@+id/imageButton10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:src="@mipmap/mecanica2" />
+
+                        <ImageButton
+                            android:id="@+id/imageButton11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:src="@mipmap/mecanica3" />
+
+                        <ImageButton
+                            android:id="@+id/imageButton12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:src="@mipmap/newton1" />
+
+                        <ImageButton
+                            android:id="@+id/imageButton13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:src="@mipmap/newton2" />
+
+                        <ImageButton
+                            android:id="@+id/imageButton14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:src="@mipmap/newton3" />
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+            </TableRow>
+        </androidx.cardview.widget.CardView>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/geografia" />
             </TableRow>
 
         </TableLayout>
