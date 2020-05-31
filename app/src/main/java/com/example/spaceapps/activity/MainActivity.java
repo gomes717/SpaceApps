@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
@@ -15,12 +16,12 @@ import com.example.spaceapps.fragment.MenuFragment;
 import com.example.spaceapps.fragment.QuestionsFragment;
 
 public class MainActivity extends AppCompatActivity {
-    private Button  buttonQuestion,
-                    buttonMenu,
+    private ImageButton buttonMenu,
                     buttonChat,
                     buttonQuestionPage,
                     buttonLeaderBoard,
                     buttonConfig;
+    private Button  buttonQuestion;
 
     private QuestionsFragment questionsFragment;
     private MenuFragment menuFragment;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         //implementacao botoes
         buttonQuestion = findViewById(R.id.buttonQuestion);
         buttonMenu = findViewById(R.id.buttonMenu);
-        buttonChat = findViewById(R.id.buttonChat);
+        buttonChat = findViewById(R.id.buttonSearch);
         buttonConfig = findViewById(R.id.buttonConfig);
         buttonLeaderBoard = findViewById(R.id.buttonLeaderBoard);
         buttonQuestionPage = findViewById(R.id.buttonQuestionPage);
