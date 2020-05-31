@@ -45,6 +45,7 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
     private RadioButton [] options = { radioButtonA, radioButtonB, radioButtonC, radioButtonD };
     private Vector<Integer> questionsToUse = new Vector<Integer>();
 
+    private Integer dado;
     
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -56,15 +57,10 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
 
         question = findViewById(R.id.questionPlace);
 
-
         buttonX = findViewById(R.id.X);
         buttonNext = findViewById(R.id.buttonNext);
         buttonNext.setText("Enter");
 
-        radioButtonA = findViewById(R.id.radioButtonA);
-        radioButtonB = findViewById(R.id.radioButtonB);
-        radioButtonC = findViewById(R.id.radioButtonC);
-        radioButtonD = findViewById(R.id.radioButtonD);
 
         options[0] =  findViewById(R.id.radioButtonA);
         options[1] =  findViewById(R.id.radioButtonB);
@@ -112,6 +108,7 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
                 options[j].setText(wrongAnswerMath[n]);
             }
         }
+
     }
 
     public void update() {
@@ -144,6 +141,7 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
             if (i > maxQuestions) {
                 barraProgresso.setProgress(i);
                 finalEXercises.start(); // no need to call prepare(); create() does that for you
+
                 finish();
             }else {
                 for (int i = 0; i < options.length; i++)
@@ -184,7 +182,7 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
           }
         }
     public void pressedExit (View view) {
-            finish();
+        finish();
         }
     @Override
     public void onInit ( int status){

@@ -135,6 +135,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="94dp"
+        android:layout_height="180dp"
+        android:src="@mipmap/appimage"
+        tools:layout_editor_absoluteY="48dp"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
     <FrameLayout
         android:id="@+id/frameConteudo"
         android:layout_width="0dp"
@@ -143,6 +151,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/invisibleWall" />
+        app:layout_constraintTop_toBottomOf="@+id/invisibleWall" >
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
