@@ -15,7 +15,6 @@ import com.example.spaceapps.R;
 import org.w3c.dom.Text;
 
 public class QuestionsFragment extends Fragment {
-    private TextView textRoll;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -23,7 +22,6 @@ public class QuestionsFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
                 View view  = inflater.inflate(R.layout.fragment_questions, container, false);
-                textRoll = view.findViewById(R.id.textRoll);
 
                 return view;
     }

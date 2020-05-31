@@ -39,8 +39,7 @@ public class MainActivity extends AppCompatActivity {
         buttonMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),QuestionActivity.class);
-                startActivity(intent);
+                 //mudar aqui depois
             }
         });
 
