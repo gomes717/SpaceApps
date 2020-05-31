@@ -3,16 +3,15 @@ package com.example.spaceapps.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.spaceapps.R;
-import com.example.spaceapps.fragment.RankingFragment;
 import com.example.spaceapps.fragment.MenuFragment;
 import com.example.spaceapps.fragment.QuestionsFragment;
+import com.example.spaceapps.fragment.RankingFragment;
 import com.example.spaceapps.fragment.SearchFragment;
 
 public class MainActivity extends AppCompatActivity {
