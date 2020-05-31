@@ -2,6 +2,7 @@ package com.example.spaceapps.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.SearchEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -14,13 +15,15 @@ import com.example.spaceapps.fragment.RankingFragment;
 import com.example.spaceapps.fragment.ChatFragment;
 import com.example.spaceapps.fragment.MenuFragment;
 import com.example.spaceapps.fragment.QuestionsFragment;
+import com.example.spaceapps.fragment.SearchFragment;
 
 public class MainActivity extends AppCompatActivity {
     private ImageButton buttonMenu,
                     buttonChat,
                     buttonQuestionPage,
                     buttonLeaderBoard,
-                    buttonConfig;
+                    buttonConfig,
+                    buttonSearch;
 
     private Button  buttonQuestion;
 
@@ -28,17 +31,24 @@ public class MainActivity extends AppCompatActivity {
     private MenuFragment menuFragment;
     private ChatFragment chatFragment;
     private RankingFragment rankingFragment;
+    private SearchFragment searchFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent intent = new Intent(getApplicationContext(), LoadingActivity.class);
+        startActivity(intent);
+
+
+
         //implementacao botoes
         buttonQuestion = findViewById(R.id.buttonQuestion);
-        buttonMenu = (ImageButton) findViewById(R.id.buttonMenu);
-        buttonChat = findViewById(R.id.buttonSearch);
+        buttonMenu = findViewById(R.id.buttonMenu);
+        buttonChat = findViewById(R.id.buttonChat);
         buttonConfig = findViewById(R.id.buttonConfig);
         buttonLeaderBoard = findViewById(R.id.buttonLeaderBoard);
         buttonQuestionPage = findViewById(R.id.buttonQuestionPage);
+        buttonSearch = findViewById(R.id.buttonSearch);
 
         buttonQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,19 +104,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        buttonSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frameConteudo, searchFragment);
+                transaction.commit();
+            }
+        });
+
         /////////////////////////////////////////////////////////////////////////////////////////
         //implementacao fragmentos
         chatFragment = new ChatFragment();
         menuFragment = new MenuFragment();
         questionsFragment = new QuestionsFragment();
         rankingFragment = new RankingFragment();
+        searchFragment = new SearchFragment();
         //aqui seta o fragmento que vai comecar no app
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frameConteudo, questionsFragment);
         transaction.commit();
 
     }
-
 
     private void update()
     {}
