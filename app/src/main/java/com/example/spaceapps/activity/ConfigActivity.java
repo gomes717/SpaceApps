@@ -14,6 +14,7 @@ public class ConfigActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_config);
         soundSwitch = findViewById(R.id.soundSwitch);
+        soundSwitch.isChecked();
 
     }
 }

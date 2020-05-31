@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.example.spaceapps.R;
@@ -38,7 +39,7 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
 
 
     ///Season questions math
-    private String [] totalQuestionMath = {"1+1=", "2+2=", "7X10=", "80+2=", "46/23=", "1000+0=", "17-8="};
+    private String [] totalQuestionMath = {"1+1=", "2+2=", "7×10=", "80+2=", "46÷23=", "1000+0=", "17−8="};
     private String [] totalAnswerMath = {"2", "4", "70", "82", "2", "1000", "9"};
     private String [] wrongAnswerMath = {"99", "8", "72%", "1888", "87662", "556"};
     private RadioButton correctAnswer;
@@ -79,6 +80,9 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
 
         //Speak sound
         tts = new TextToSpeech(this, this);
+        tts.setPitch((float) 0.5);
+        tts.setSpeechRate((float) 1.4);
+
         anwserCorrect = MediaPlayer.create(this, R.raw.correct);
         anwserWrong = MediaPlayer.create(this, R.raw.wrong);
         finalEXercises = MediaPlayer.create(this, R.raw.finalwin);
@@ -114,7 +118,6 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
                 options[j].setText(wrongAnswerMath[n]);
             }
         }
-
     }
 
     public void update() {
@@ -194,8 +197,12 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
     @Override
     public void onInit ( int status){
             if (status == TextToSpeech.SUCCESS) {
-                String questionT = question.getText().toString();
-                tts.speak(questionT, tts.QUEUE_FLUSH, null);
+
+
+                    String questionT = question.getText().toString();
+                    tts.speak(questionT, tts.QUEUE_FLUSH, null);
+
+
             }
         }
     }
