@@ -78,19 +78,21 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toTopOf="@+id/guideline9"
-        app:srcCompat="@mipmap/search_icon" />
+        app:srcCompat="@mipmap/search_icon_w" />
 
     <ImageButton
         android:id="@+id/buttonChat"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/colorPrimary"
-        android:scaleType="fitCenter"
+        android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline9"
-        app:srcCompat="@mipmap/chat_icon" />
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@mipmap/chat_icon_w" />
 
     <ImageButton
         android:id="@+id/buttonQuestionPage"
@@ -102,7 +104,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="@+id/guideline9"
-        app:srcCompat="@mipmap/home_icon" />
+        app:srcCompat="@mipmap/home_icon_w" />
 
     <ImageButton
         android:id="@+id/buttonLeaderBoard"
@@ -114,7 +116,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/guideline9"
-        app:srcCompat="@mipmap/ranking_icon" />
+        app:srcCompat="@mipmap/ranking_icon_w" />
 
     <ImageButton
         android:id="@+id/buttonMenu"
@@ -128,12 +130,12 @@
         app:layout_constraintHorizontal_bias="0.733"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="@+id/guideline9"
-        app:srcCompat="@mipmap/profile_icon" />
+        app:srcCompat="@mipmap/profile_icon_w" />
 
     <ImageButton
         android:id="@+id/buttonConfig"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="58dp"
+        android:layout_height="34dp"
         android:background="#00FFFFFF"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/invisibleWall"
