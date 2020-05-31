@@ -51,15 +51,8 @@
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
 
-                        <Button
-                            android:id="@+id/buttonQM0"
-                            android:layout_width="104dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Question 1" />
-
                         <ImageButton
-                            android:id="@+id/imageButton3"
+                            android:id="@+id/imageButtonQM1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
