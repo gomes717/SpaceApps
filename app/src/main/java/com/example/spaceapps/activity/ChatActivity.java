@@ -28,7 +28,7 @@ public class ChatActivity extends AppCompatActivity {
     public void sendmessage(View view) {
         String totalChat = chat.getText().toString();
         String myMessage = msg.getText().toString();
-        totalChat += "\n usuário: " + myMessage;
+        totalChat += "\n Immanuel Kant: " + myMessage;
 
         chat.setText(totalChat);
         msg.setText("");
