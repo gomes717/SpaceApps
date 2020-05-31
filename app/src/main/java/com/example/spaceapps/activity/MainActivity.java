@@ -12,7 +12,8 @@ import com.example.spaceapps.R;
 import com.example.spaceapps.fragment.QuestionsFragment;
 
 public class MainActivity extends AppCompatActivity {
-    private Button buttonQuestion,buttonMenu;
+    private Button buttonQuestion,buttonMenu,buttonChat,buttonQuestionPage,buttonLeaderBoard,buttonMateria,buttonConfig;
+
     private QuestionsFragment questionsFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,11 @@ public class MainActivity extends AppCompatActivity {
 
         buttonQuestion = findViewById(R.id.buttonQuestion);
         buttonMenu = findViewById(R.id.buttonMenu);
+        buttonChat = findViewById(R.id.buttonChat);
+        buttonConfig = findViewById(R.id.buttonConfig);
+        buttonLeaderBoard = findViewById(R.id.buttonConfig);
+        buttonMateria = findViewById(R.id.buttonMateria);
+        buttonQuestionPage = findViewById(R.id.buttonQuestionPage);
 
         buttonQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,10 +44,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        buttonQuestionPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frameConteudo, questionsFragment);
+                transaction.commit();
+            }
+        });
+
         questionsFragment = new QuestionsFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.frameConteudo, questionsFragment);
+        transaction.replace(R.id.frameConteudo, questionsFragment);
         transaction.commit();
-
     }
 }
