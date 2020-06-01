@@ -61,7 +61,7 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
         textoQuestao = findViewById(R.id.questaoText);
-        textoQuestao.setText("questao " + String.valueOf(i) + ":");
+        textoQuestao.setText("Question: " + String.valueOf(i) + ":");
 
         question = findViewById(R.id.questionPlace);
 
@@ -81,7 +81,7 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
         options[3] =  findViewById(R.id.radioButtonD);
 
         barraProgresso = findViewById(R.id.progressBar);
-        barraProgresso.setMax(6);
+        barraProgresso.setMax(8);
         barraProgresso.setMin(1);
         radioGroup = findViewById(R.id.radioGroup);
 
@@ -156,16 +156,18 @@ public class QuestionActivity extends AppCompatActivity implements TextToSpeech.
             i++;
             if (i > maxQuestions) {
                 barraProgresso.setProgress(i);
-                finalEXercises.start(); // no need to call prepare(); create() does that for you
+                finalEXercises.start(); // no need to call prepare(); create() does that for yo
+                Intent intent = new Intent(this, FinalLesson.class);//
+                startActivity(intent);
                 //////////////////////////////////////////////////////AQUI COLOCAR A NOVA INTENT
-                finish();
+
             }else
                 {
                 for (int i = 0; i < options.length; i++)
                 {
                     options[i].setBackgroundColor(getResources().getColor(R.color.colorWhite));
                 }
-                textoQuestao.setText("questao " + String.valueOf(i) + ":");
+                textoQuestao.setText("Question: " + String.valueOf(i) + ":");
 
                 //////////////////////////
                 question.setText(totalQuestionMath[questionsToUse.get(i-1)]);
