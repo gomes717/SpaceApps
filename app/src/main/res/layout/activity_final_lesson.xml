@@ -6,9 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".activity.FinalLesson">
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#015438"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/button2"
-        android:layout_width="344dp"
+        android:layout_width="0dp"
         android:layout_height="47dp"
         android:layout_marginBottom="32dp"
         android:background="@android:color/holo_green_dark"
@@ -24,33 +34,28 @@
         android:id="@+id/textView"
         android:layout_width="346dp"
         android:layout_height="117dp"
-        android:layout_marginBottom="32dp"
-        android:text="Module successfully completed!"
-        android:textColor="#2261FF"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="Module Successfully Completed!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@color/colorWhite"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="156dp"
-        android:layout_height="180dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.803"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/conhecimento" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView14"
-        android:layout_width="380dp"
-        android:layout_height="704dp"
-        android:layout_marginBottom="84dp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        android:layout_width="447dp"
+        android:layout_height="779dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="4dp"
+        android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/pilhospeaking" />
 </androidx.constraintlayout.widget.ConstraintLayout>

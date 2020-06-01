@@ -78,11 +78,12 @@
         android:id="@+id/questaoText"
         android:layout_width="105dp"
         android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:background="@color/cardview_shadow_start_color"
         android:text="Question 1:"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/progressBar"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -90,10 +91,15 @@
         android:id="@+id/X"
         android:layout_width="40dp"
         android:layout_height="34dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:background="@android:drawable/ic_delete"
         android:onClick="pressedExit"
         app:layout_constraintBottom_toTopOf="@+id/questionPlace"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/progressBar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -104,8 +110,8 @@
         android:layout_height="34dp"
         android:background="@color/black_overlay"
         app:layout_constraintEnd_toStartOf="@+id/X"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/questaoText"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
